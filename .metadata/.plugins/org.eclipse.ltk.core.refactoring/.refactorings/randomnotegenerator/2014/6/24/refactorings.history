@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Change Layout" description="Change Layout" file="/randomnotegenerator/res/layout/activity_main.xml" flags="6" flatten="true" id="com.android.ide.eclipse.adt.refactoring.convert" proj="/randomnotegenerator" sel-end="6968" sel-start="0" stamp="1402257730883" type="android.widget.RelativeLayout"/>
+</session>

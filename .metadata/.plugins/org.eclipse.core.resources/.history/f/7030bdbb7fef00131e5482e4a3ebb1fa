@@ -1,0 +1,334 @@
+package com.elliott.randomnotegenerator;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.media.MediaPlayer;//added
+import android.view.View;//added
+import android.widget.Button;//added
+import android.widget.TextView;
+
+import java.io.*;//added
+import java.util.Random;
+
+public class MainActivity extends Activity {
+	public static int savedRandom;// global variable for random button output
+	public static int answer;
+	boolean mode = true;
+	TextView display;// added for resultsbox
+	// sound files
+	TextView trueAnswer;//added for checking random variable and telling you actual random result
+	MediaPlayer cPlayer;
+	MediaPlayer csPlayer;
+	MediaPlayer dPlayer;
+	MediaPlayer dsPlayer;
+	MediaPlayer ePlayer;
+	MediaPlayer fPlayer;
+	MediaPlayer fsPlayer;
+	MediaPlayer gPlayer;
+	MediaPlayer gsPlayer;
+	MediaPlayer aPlayer;
+	MediaPlayer asPlayer;
+	MediaPlayer bPlayer;
+	MediaPlayer elPlayer;
+	MediaPlayer flPlayer;
+	MediaPlayer fslPlayer;
+	MediaPlayer glPlayer;
+	MediaPlayer gslPlayer;
+	MediaPlayer alPlayer;
+	MediaPlayer aslPlayer;
+	MediaPlayer blPlayer;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+
+		super.onCreate(savedInstanceState);
+		cPlayer = MediaPlayer.create(this, R.raw.mozart);
+		csPlayer = MediaPlayer.create(this, R.raw.alternatezart);
+		dPlayer = MediaPlayer.create(this, R.raw.mozart);
+		dsPlayer = MediaPlayer.create(this, R.raw.mozart);
+		ePlayer = MediaPlayer.create(this, R.raw.mozart);
+		fPlayer = MediaPlayer.create(this, R.raw.mozart);
+		fsPlayer = MediaPlayer.create(this, R.raw.mozart);
+		gPlayer = MediaPlayer.create(this, R.raw.mozart);
+		gsPlayer = MediaPlayer.create(this, R.raw.mozart);
+		aPlayer = MediaPlayer.create(this, R.raw.mozart);
+		asPlayer = MediaPlayer.create(this, R.raw.mozart);
+		bPlayer = MediaPlayer.create(this, R.raw.mozart);
+		elPlayer = MediaPlayer.create(this, R.raw.mozart);
+		flPlayer = MediaPlayer.create(this, R.raw.mozart);
+		fslPlayer = MediaPlayer.create(this, R.raw.mozart);
+		glPlayer = MediaPlayer.create(this, R.raw.mozart);
+		gslPlayer = MediaPlayer.create(this, R.raw.mozart);
+		alPlayer = MediaPlayer.create(this, R.raw.mozart);
+		aslPlayer = MediaPlayer.create(this, R.raw.mozart);
+		blPlayer = MediaPlayer.create(this, R.raw.mozart);
+
+		setContentView(R.layout.activity_main);
+		Button button = (Button) findViewById(R.id.ButtonPlay);
+		Button buttonChoiceC = (Button) findViewById(R.id.ButtonC);
+		Button buttonChoiceCS = (Button) findViewById(R.id.ButtonCS);
+		Button buttonChoiceD = (Button) findViewById(R.id.ButtonD);
+		Button buttonChoiceDS = (Button) findViewById(R.id.ButtonDS);
+		Button buttonChoiceE = (Button) findViewById(R.id.ButtonE);
+		Button buttonChoiceF = (Button) findViewById(R.id.ButtonF);
+		Button buttonChoiceFS = (Button) findViewById(R.id.ButtonFS);
+		Button buttonChoiceG = (Button) findViewById(R.id.ButtonG);
+		Button buttonChoiceGS = (Button) findViewById(R.id.ButtonGS);
+		Button buttonChoiceA = (Button) findViewById(R.id.ButtonA);
+		Button buttonChoiceAS = (Button) findViewById(R.id.ButtonAS);
+		Button buttonChoiceB = (Button) findViewById(R.id.ButtonB);
+		//add these to xml file
+		Button buttonChoiceEL = (Button) findViewById(R.id.ButtonEL);
+		Button buttonChoiceFL = (Button) findViewById(R.id.ButtonFL);
+		Button buttonChoiceFSL = (Button) findViewById(R.id.ButtonFSL);
+		Button buttonChoiceGL = (Button) findViewById(R.id.ButtonGL);
+		Button buttonChoiceGSL = (Button) findViewById(R.id.ButtonGSL);
+		Button buttonChoiceAL = (Button) findViewById(R.id.ButtonAL);
+		Button buttonChoiceASL = (Button) findViewById(R.id.ButtonASL);
+		Button buttonChoiceBL = (Button) findViewById(R.id.ButtonBL);
+		//add above to xml file
+		display = (TextView) findViewById(R.id.resultBox);// added for results
+													// box
+		// button procces
+		button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				runsound();
+			}
+		});
+		// /buttonChoiceA process
+		buttonChoiceC.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 1; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceCS.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 2; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceD.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 3; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceDS.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 4; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceE.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 5; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceF.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 6; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceFS.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 7; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceG.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 8; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceGS.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 9; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceA.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 10; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceAS.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 11; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+		buttonChoiceB.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				answer = 12; // establishes user answer c=1 c#=2 etc
+				test()
+				;
+			}
+		});//closesonclick
+		// /buttonChoiceA process
+				buttonChoiceEL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 13; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceFL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 14; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceFSL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 15; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceGL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 16; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceGSL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 17; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceAL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 18; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceASL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 19; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+				// /buttonChoiceA process
+				buttonChoiceBL.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						answer = 20; // establishes user answer c=1 c#=2 etc
+						test()
+						;
+					}
+				});//closesonclick
+	}// closes oncreate
+
+	// start test ***currently not working---was working before adding more
+	// buttons and players
+	public void test() {
+		if (answer == savedRandom) {
+			display.setText("You are correct" );
+		} else {
+			display.setText("Wrong");
+		
+		}
+	}
+
+	// end test
+	public void runsound() {
+		// /establishing global variable to be called later to determine if
+		// users guess is correct
+
+		// Usually this should be a field rather than a method variable so
+		// that it is not re-seeded every call.
+		// random files is taken from
+		// http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java?lq=1
+		Random rand = new Random();
+
+		// nextInt is normally exclusive of the top value,
+		// so add 1 to make it inclusive
+		int randomNum = rand.nextInt((20 - 1) + 1) + 1;
+		if (randomNum == 1) {
+			cPlayer.start();
+		}
+		// if else (randonNum ==2){bPlayer.start(); } //this isnt working for
+		// some reason
+		else if (randomNum == 2) {
+			csPlayer.start();
+		} else if (randomNum == 3) {
+			dPlayer.start();
+		} else if (randomNum == 4) {
+			dsPlayer.start();
+		} else if (randomNum == 5) {
+			ePlayer.start();
+		} else if (randomNum == 6) {
+			fPlayer.start();
+		} else if (randomNum == 7) {
+			fsPlayer.start();
+		} else if (randomNum == 8) {
+			gPlayer.start();
+		} else if (randomNum == 9) {
+			gsPlayer.start();
+		} else if (randomNum == 10) {
+			aPlayer.start();
+		} else if (randomNum == 11) {
+			asPlayer.start();
+		} else if (randomNum == 12) {
+			asPlayer.start();
+		} else if (randomNum == 13) {
+			asPlayer.start();
+		} else if (randomNum == 14) {
+			asPlayer.start();
+		} else if (randomNum == 15) {
+			asPlayer.start();
+		} else if (randomNum == 16) {
+			asPlayer.start();
+		} else if (randomNum == 17) {
+			asPlayer.start();
+		} else if (randomNum == 18) {
+			asPlayer.start();
+		} else if (randomNum == 19) {
+			asPlayer.start();
+		} 
+		else {
+			bPlayer.start();
+		}
+		savedRandom = randomNum;
+	}
+
+}

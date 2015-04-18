@@ -1,0 +1,91 @@
+package com.elliott.randomnotegenerator;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.media.MediaPlayer;//added
+import android.view.View;//added
+import android.widget.Button;//added
+import android.widget.TextView;
+
+import java.io.*;//added
+import java.util.Random;
+
+
+public class MainActivity extends Activity {
+	public static int savedRandom;//global variable for random button output
+
+	boolean mode = true;
+	
+	MediaPlayer cPlayer;
+	MediaPlayer csPlayer;
+	MediaPlayer dPlayer;
+	MediaPlayer dsPlayer;
+	MediaPlayer ePlayer;
+	MediaPlayer fPlayer;
+	MediaPlayer fsPlayer;
+	MediaPlayer gPlayer;
+	MediaPlayer gsPlayer;
+	MediaPlayer aPlayer;
+	MediaPlayer asPlayer;
+	MediaPlayer bPlayer;
+	TextView display;//added for resultsbox
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		cPlayer= MediaPlayer.create(this,R.raw.mozart);
+		csPlayer= MediaPlayer.create(this,R.raw.alternatezart);
+		dPlayer = MediaPlayer.create(this, R.raw.mozart);
+		dsPlayer = MediaPlayer.create(this, R.raw.alternatezart);
+		setContentView(R.layout.activity_main);
+		Button button=(Button)findViewById(R.id.ButtonPlay);
+		Button buttonChoiceC=(Button)findViewById(R.id.ButtonC);
+		display = (TextView) findViewById(R.id.resultBox);//added for results box
+		
+		Button buttonChoiceD=(Button)findViewById(R.id.ButtonD);
+		//button procces
+		button.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v){
+				runsound();	}
+		});
+		///buttonChoiceA process
+		buttonChoiceC.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v){
+				int answer = 1; //establishes user answer c=1 c#=2 etc
+				
+				if(answer == savedRandom){
+					display.setText("You are correct");
+				}
+				else {
+					display.setText("You are wrong");
+				}
+				
+				;	}
+		});
+	
+		
+	}	//closes on create
+		
+	public int runsound(){
+		// Usually this should be a field rather than a method variable so
+	    // that it is not re-seeded every call.
+		//random files is taken from http://stackoverflow.com/questions/363681/generating-random-numbers-in-a-range-with-java?lq=1
+	    Random rand = new Random();
+
+	    // nextInt is normally exclusive of the top value,
+	    // so add 1 to make it inclusive
+	    int randomNum = rand.nextInt((2 - 1) + 1) + 1;
+		if (randomNum ==1){	cPlayer.start();	}
+		else if (randomNum == 2) {csPlayer.start(); }
+		
+		else if (randomNum == 3) {dPlayer.start(); }
+		else if (randomNum == 4) {dsPlayer.start(); }
+		
+		else {cPlayer.start();	}
+		savedRandom = randomNum;
+		return randomNum;
+	}
+	
+}

@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.elliott.randomnotegenerator.MainActivity$PlaceholderFragment" >
+
+    <Button
+        android:id="@+id/ButtonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    
+        android:layout_marginTop="100dp"
+        android:text="@string/play" />
+    
+   <TextView 
+        android:id="@+id/promptBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt" 
+    	/>
+    
+    <Button
+        android:id="@+id/ButtonC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/c" />
+      <TextView 
+        android:id="@+id/resultBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result" 
+    	/>
+    <Button
+        android:id="@+id/ButtonCS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/cs" />
+    <Button
+        android:id="@+id/ButtonD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/d" />
+    <Button
+        android:id="@+id/ButtonDS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/ds" />
+    <Button
+        android:id="@+id/ButtonE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/e" />
+    <Button
+        android:id="@+id/ButtonF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/f" />
+    <Button
+        android:id="@+id/ButtonFS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/fs" />
+    <Button
+        android:id="@+id/ButtonG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/g" />
+    <Button
+        android:id="@+id/ButtonGS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/gs" />
+    <Button
+        android:id="@+id/ButtonA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/a" />
+    <Button
+        android:id="@+id/ButtonAS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/as" />
+   <Button
+        android:id="@+id/ButtonB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"      
+        android:layout_marginTop="100dp"
+        android:text="@string/b" />
+   
+    <TextView 
+        android:id="@+id/resultBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result" 
+    	/>
+	
+</LinearLayout>
+

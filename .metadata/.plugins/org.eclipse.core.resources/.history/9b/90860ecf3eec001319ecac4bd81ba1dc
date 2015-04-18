@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">randomnotegenerator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="play">Turn on Sound</string>
+	<string name="prompt">What note are you hearing??</string>
+	<string name="c">note C</string>
+	<string name="result"></string>
+</resources>
